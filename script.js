@@ -1,19 +1,22 @@
 import "./jquery-3.7.1.min";
 //Récuprération du pseudo du l'utilisateur
-let pseudo;
+let pseudo =$("#pseudonyme").val().trim();
 
 //Récupération du contenu du message
-let contenu;
+let contenu = $("#message").val().trim();
 
 //Envoi du contenu au script php pour l'enregistrement du message dans la BD
-$.ajax({
-    type : "POST",
-    url:"./enregistrer.php",
-    data :"pseudo="+pseudo+"&contenu="+contenu,
-    //Si le message a bien été enregistré on l'affiche
-    success : refresh()
-}
-)
+$("#btn_envoi").on("click", function(){
+    $.ajax({
+        type : "POST",
+        url:"./enregistrer.php",
+        data :"pseudo="+pseudo+"&contenu="+contenu,
+        //Si le message a bien été enregistré on l'affiche
+        success : refresh()
+    }
+    )
+})
+
 
 //Récupère les 10 derniers messages grâce au scriot php
 function refresh(){
