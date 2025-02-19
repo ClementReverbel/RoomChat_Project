@@ -10,10 +10,17 @@ $.ajax({
     type : "POST",
     url:"./enregistrer.php",
     data :"pseudo="+pseudo+"&contenu="+contenu,
-    success : function(){
-        //Si le message a bien été enregistré on l'affiche
-        $.ajax({
-            url : "./recuperer.php"
-        })
-    }
-})
+    //Si le message a bien été enregistré on l'affiche
+    success : refresh()
+}
+)
+
+//Récupère les 10 derniers messages grâce au scriot php
+function refresh(){
+    $.ajax({
+        url : "./recuperer.php"
+    })
+}
+
+//Fait une demande des 10 derniers messages toutes les 2 secondes
+setInterval(refresh(),2000);
