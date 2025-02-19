@@ -16,5 +16,4 @@ $.ajax({
             url : "./recuperer.php"
         })
     }
-}
-)
+})
