@@ -1,4 +1,3 @@
-import "./jquery-3.7.1.min";
 //Récuprération du pseudo du l'utilisateur
 let pseudo =$("#pseudonyme").val().trim();
 
@@ -9,7 +8,7 @@ let contenu = $("#message").val().trim();
 $("#btn_envoi").on("click", function(){
     $.ajax({
         type : "POST",
-        url:"../php/enregistrer.php",
+        url:"./traitement/enregistrer.php",
         data :"pseudo="+pseudo+"&contenu="+contenu,
         //Si le message a bien été enregistré on l'affiche
         success : refresh()
@@ -21,7 +20,7 @@ $("#btn_envoi").on("click", function(){
 //Récupère les 10 derniers messages grâce au scriot php
 function refresh(){
     $.ajax({
-        url : "../php/recuperer.php"
+        url : "./traitement/recuperer.php"
     })
 }
 
