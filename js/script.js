@@ -9,7 +9,7 @@ let contenu = $("#message").val().trim();
 $("#btn_envoi").on("click", function(){
     $.ajax({
         type : "POST",
-        url:"./enregistrer.php",
+        url:"../php/enregistrer.php",
         data :"pseudo="+pseudo+"&contenu="+contenu,
         //Si le message a bien été enregistré on l'affiche
         success : refresh()
@@ -21,7 +21,7 @@ $("#btn_envoi").on("click", function(){
 //Récupère les 10 derniers messages grâce au scriot php
 function refresh(){
     $.ajax({
-        url : "./recuperer.php"
+        url : "../php/recuperer.php"
     })
 }
 
