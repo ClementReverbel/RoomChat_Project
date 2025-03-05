@@ -1,17 +1,25 @@
 <?php
-    //Fonction permettant de prendre en paramètre un auteur et son message pour l'ajouter dans la base de donnée
-    //Renvoi "vrai" ou "faux" pour vérifier que l'ajout a été bien réalisé
-    function rajouterMessage($auteur,$message){
-        $linkpdo = new PDO("mysql:host=mysql-messages.alwaysdata.net;dbname=messsages_db", "messages", "skillissueff15!");
-        //On prend la date du jour au format de DATETIME en SQL
-        $date=date('Y-m-d h:i:s');
-        $requete = $linkpdo -> query("INSERT INTO messages(heure,id_auteur,contenu) VALUES (:heure,:id_auteur,:contenu)");
-        return $requete->execute(array("heure"=>$date,"id_auteur"=>$auteur,"contenu"=>$message));
-    }
+// Connexion à la base de données
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=messages_db;charset=utf8mb4', 'root', '');
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die('Erreur de connexion : ' . $e->getMessage());
+}
 
-    //Récupérer les données passées en paramètres avec la méthode Ajax
-    $auteur=$_POST['pseudo'];
-    $message=$_POST['contenu'];
+// Récupération des données du message
+$pseudonyme = $_POST['pseudonyme'];
+$message = $_POST['message'];
+$heure = date('Y-m-d H:i:s');
 
-    rajouterMessage($auteur,$message);
+// Préparation et exécution de la requête d'insertion
+$req = $bdd->prepare('INSERT INTO messages (heure, id_auteur, contenu) VALUES (:heure, :id_auteur, :contenu)');
+$req->execute(array(
+    'heure' => $heure,
+    'id_auteur' => $pseudonyme,
+    'contenu' => $message
+));
+
+// Réponse en JSON pour indiquer le succès
+echo json_encode(['success' => true]);
 ?>
