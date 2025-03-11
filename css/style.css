@@ -1,0 +1,131 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+#header {
+    margin-top:0;
+    background: #0078ff;
+    display: block;
+    width:97%;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Pseudonyme input */
+#pseudonyme {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+    outline: none;
+    text-align: center;
+}
+
+/* Messages container */
+#messages {
+    width: 90%;
+    max-width: 600px;
+    height: 300px;
+    overflow-y: auto;
+    background: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Message individuel */
+#messages p {
+    background: #e3f2fd;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Formulaire */
+#envoi {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+/* Champ de message */
+#message {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #0078ff;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Bouton d'envoi */
+#btn_envoi {
+    padding: 12px 20px;
+    background: #0078ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Effet au survol du bouton */
+#btn_envoi:hover {
+    background: #005bb5;
+}
+
+/* Effet d'animation quand un message est ajouté */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#messages p {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #messages {
+        height: 200px;
+    }
+    
+    #envoi {
+        flex-direction: column;
+    }
+
+    #message {
+        width: 100%;
+    }
+
+    #btn_envoi {
+        width: 100%;
+    }
+}
