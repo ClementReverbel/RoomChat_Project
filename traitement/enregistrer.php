@@ -1,7 +1,7 @@
 <?php
 // Connexion à la base de données
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=messages_db;charset=utf8mb4', 'root', '');
+    $bdd = new PDO('mysql:host=mysql-messages.alwaysdata.net;dbname=messages_db;charset=utf8mb4', 'messages', 'skillissueff15!');
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     die('Erreur de connexion : ' . $e->getMessage());
