@@ -49,3 +49,18 @@ $(document).ready(function() {
         }
     });
 });
+
+
+//Récupère les 10 derniers messages grâce au scriot php
+function refresh(){
+    $.ajax({
+        url : "./traitement/recuperer.php",
+        type : "GET",
+        success : function(data){
+            $("#messages").html(data);
+        }
+    })
+}
+
+//Fait une demande des 10 derniers messages toutes les 2 secondes
+setInterval(refresh(),2000);
