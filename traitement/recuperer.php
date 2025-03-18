@@ -3,9 +3,10 @@
     //Permet de récupérer les 10 derniers messages enregistrés dans la base de données
     function recupererMessage(){
         $linkpdo = new PDO("mysql:host=mysql-messages.alwaysdata.net;dbname=messages_db", "messages", "skillissueff15!");
-        $requete = $linkpdo -> prepare("SELECT * FROM messages ORDER BY heure LIMIT 10");
+        $requete = $linkpdo -> prepare("SELECT * FROM messages ORDER BY heure DESC LIMIT 10");
         $requete -> execute();
         $message10 = $requete->fetchAll(PDO::FETCH_ASSOC);
+        $message10=array_reverse($message10);
         return $message10;
     }
 
@@ -19,6 +20,7 @@
     }
 
     function temps_ecoule($msg){
+        date_default_timezone_set('Europe/Paris');
         $date_actuelle = date('Y-m-d H:i:s');
         $date_message = $msg['heure'];
         $date_message = strtotime($date_message);
