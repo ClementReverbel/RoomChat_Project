@@ -41,7 +41,7 @@ body {
 #messages {
     width: 90%;
     max-width: 600px;
-    height: 300px;
+    height: 30em;
     overflow-y: auto;
     background: white;
     padding: 10px;
@@ -57,6 +57,11 @@ body {
     border-radius: 5px;
     margin: 5px 0;
     font-size: 16px;
+}
+
+/* Message individuel */
+#messages p:hover {
+    background: #cad8e2;
 }
 
 /* Formulaire */
