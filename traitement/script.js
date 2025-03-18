@@ -55,8 +55,8 @@ function envoi_message() {
 
 //Récupère les 10 derniers messages grâce au scriot php
 function refresh(){
-            $("#messages").load("./traitement/recuperer.php");
-    }
+    $("#messages").load("./traitement/recuperer.php");
+}
 
 refresh();
 
