@@ -10,6 +10,7 @@ try {
 // Récupération des données du message
 $pseudonyme = $_POST['pseudonyme'];
 $message = $_POST['message'];
+date_default_timezone_set('Europe/Paris');
 $heure = date('Y-m-d H:i:s');
 
 // Préparation et exécution de la requête d'insertion
