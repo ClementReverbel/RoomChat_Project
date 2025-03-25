@@ -1,4 +1,4 @@
-# README - Application de Messagerie Instantanée
+# Application de Messagerie Instantanée - Roomchat
 
 ## Description du projet
 Ce projet est une application de messagerie instantanée développée dans le cadre de notre parcours universitaire. L'application utilise Ajax et la librairie jQuery en JavaScript pour permettre aux utilisateurs d'envoyer et de recevoir des messages en temps réel.
