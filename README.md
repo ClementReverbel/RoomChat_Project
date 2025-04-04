@@ -1,23 +1,40 @@
-# Application de Messagerie Instantanée - RoomChat Project
-Description
-Ce projet consiste en la création d'une application de messagerie instantanée utilisant Ajax, jQuery et PHP, avec une base de données MySQL pour stocker les messages. L'application permet aux utilisateurs d'envoyer et de recevoir des messages en temps réel via une interface web interactive.
+# Application de Messagerie Instantanée - Roomchat
 
-## Fonctionnalités
-- Stockage des messages dans une base de données MySQL.
+## Description du projet
+Ce projet est une application de messagerie instantanée développée dans le cadre de notre parcours universitaire. L'application utilise Ajax et la librairie jQuery en JavaScript pour permettre aux utilisateurs d'envoyer et de recevoir des messages en temps réel.
 
-- Envoi de messages via une requête Ajax vers un script PHP.
+## Technologies utilisées
+- **Front-end :** HTML, CSS, JavaScript, jQuery
+- **Back-end :** PHP
+- **Base de données :** MySQL
 
-- Récupération des messages toutes les 2 secondes pour mise à jour en temps réel.
+## Fonctionnalités principales
+1. **Enregistrement des messages** : Les utilisateurs peuvent envoyer des messages qui sont stockés dans une base de données.
+2. **Affichage des messages** : Les 10 derniers messages sont récupérés et affichés.
+3. **Mise à jour automatique** : Rafraîchissement des messages toutes les 2 secondes sans recharger la page.
+4. **Interaction fluide** : Envoi de message par un clic sur le bouton "Envoyer" ou en appuyant sur la touche "Entrée".
+5. **Effacement automatique** : La zone de saisie est vidée après l'envoi d'un message.
 
-- Envoi avec la touche Entrée pour plus de fluidité.
+## Installation et utilisation
+### Installation
+Si vous souhaitez utiliser ce logiciel en local, il vous faudra cloner le dépôt :
+ ```sh
+    git clone https://github.com/ClementReverbel/RoomChat_Project
+```
+Puis, vous devrez le mettre sur votre serveur local (xampp, wamp, uwamp, etc...).
+La connexion à la base de données étant distante, vous n'avez pas besoin d'importer de script SQL.
 
-- Vidage automatique de la zone de saisie après l'envoi d'un message.
+### Utilisation
+1. Accédez à `https://messages.alwaysdata.net/` via un navigateur web.
+2. Entrez un message et cliquez sur "Envoyer".
+3. Les messages s'affichent en temps réel et se mettent à jour automatiquement.
 
-- Interface utilisateur responsive et agréable.
+## Améliorations possibles
+- Ajout d'un système d'authentification avec gestion des utilisateurs connectés.
+- Implémentation de plusieurs "salles de discussion".
+- Optimisation des requêtes pour améliorer la performance.
 
-Lien vers l'application : https://messages.alwaysdata.net/
+---
+**Auteurs :** REVERBEL Clément & REYNIER Zyad
+**Date :** Mars 2025
 
---- 
-
-## Développeurs 
-Reynier Zyad & Reverbel Clément, Mars 2025
